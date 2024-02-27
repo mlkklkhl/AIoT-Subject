@@ -7,8 +7,6 @@ Firmware: https://micropython.org/download/ESP32_GENERIC_S2/
 - PIR sensor
   - Ref Doc: https://www.mpja.com/download/31227sc.pdf
   - Description:
-    ![Alt text](assets/images/PIR1.png?raw=true "PIR1")
-    ![Alt text](assets/images/PIR2.png?raw=true "PIR2")
     - ปรับการหน่วงเวลา Output ได้ 3 วินาที ถึง 5 วินาที
     - ปรับช่วงระยะตรวจจับได้ 3-7 เมตร
     - องศาการตรวจจับกว้าง 110 องศา
