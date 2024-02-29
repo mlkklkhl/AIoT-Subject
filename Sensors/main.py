@@ -71,7 +71,7 @@ def read_motion_sensor():
     print("[PIR] Raw Value: {}".format(pir_value), end="")
     if pir_value > 1000:
         converted_pir_value = 1
-        print("   - Ah Motion Detected")
+        print("   - Motion Detected")
     else:
         converted_pir_value = 0
         print("   - No Motion Detected")
@@ -143,8 +143,6 @@ try:
             "Mic": mic_value,
             "Label": label
         }
-
-        print('message: ', message)
 
         time.sleep(0.5)
 
