@@ -27,7 +27,8 @@ global converted_mic_value
 WIFIssid = "Engineering IOT"
 WIFIpsw = "coeai123"
 
-sensorID = 'Test'
+room = 'RoomID'
+sensorID = 'SensorID'
 
 URL = 'https://XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.firebasedatabase.app/'
 
@@ -112,9 +113,11 @@ def read_mic_sensor():
     
 try:
 
+    ###### label = event ######
     label = 'human - light'
     print('starting...', label)
 
+    '''
     connect()
     set_time()
 
@@ -126,16 +129,20 @@ try:
     rtc.init((year, month, day, weekday, hours + utc_shift, minutes, seconds, subseconds))
 
     firebase.setURL(URL)
-
+    '''
+    
     while True:
 
+        '''
         t = rtc.datetime()
         now = '{:04d}-{:02d}-{:02d} {:02d}:{:02d}:{:02d}'.format(t[0], t[1], t[2], t[4], t[5], t[6])
-
+        '''
+        
         pir_value = read_motion_sensor()
         light_value = read_light_sensor()
         mic_value = read_mic_sensor()
 
+        '''
         message = {
             "Timestamp": now,
             "PIR": pir_value,
@@ -143,12 +150,12 @@ try:
             "Mic": mic_value,
             "Label": label
         }
-
+        
         time.sleep(0.5)
 
         try:
             # Publish to Firebase Realtime Database
-            path = "TestRoom/" + sensorID + "/" + now +  "/"
+            path = room + "/" + sensorID + "/" + now +  "/"
             firebase.put(path, message, bg=0)
             time.sleep(0.5)
 
@@ -156,7 +163,8 @@ try:
             print('Cannot Publish to Google Cloud ...', e)
             time.sleep(30)
             reset()
-
+        '''
+        
         time.sleep(0.5)
 
 except Exception as e:
