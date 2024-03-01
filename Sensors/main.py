@@ -29,7 +29,7 @@ WIFIpsw = "coeai123"
 
 sensorID = 'Test'
 
-URL = 'https://aiot-405605-default-rtdb.asia-southeast1.firebasedatabase.app/'
+URL = 'https://XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.firebasedatabase.app/'
 
 def connect():
     sta_if = network.WLAN(network.STA_IF)
