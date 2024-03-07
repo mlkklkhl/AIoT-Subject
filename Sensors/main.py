@@ -114,6 +114,7 @@ def read_mic_sensor():
 try:
 
     ###### label = event ######
+    ## no human, human - light, human - dark
     label = 'human - light'
     print('starting...', label)
 
