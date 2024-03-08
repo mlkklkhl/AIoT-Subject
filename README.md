@@ -51,3 +51,20 @@ Firmware: https://micropython.org/download/ESP32_GENERIC_S2/
       - [SIG] -> [GPIO5]
   - Raw Data: mic_value
   - Convert Data: converted_mic_value
+
+
+# # # # # # # # # # # # Set up # # # # # # # # # # # # 
+# Flash Memory
+python -m esptool --chip esp32-s2 erase_flash
+
+# Flashing MicroPython Firmware on ESP32 with esptool.py
+python -m esptool --chip esp32-s2 --port COM3 write_flash -z 0x1000 ESP32_GENERIC_S2-20231005-v1.21.0.bin
+
+# List file with ampy
+ampy --port COM3 ls
+
+# Download file from microcontroller
+ampy --port COM3 get main.py
+
+# Upload file to microcontroller
+ampy --port COM3 put main.py
